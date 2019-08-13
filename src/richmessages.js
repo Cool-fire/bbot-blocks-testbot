@@ -19,7 +19,7 @@ bot.global.direct({
 
 //demo for send response object which initiates flow
 bot.global.direct({
-  contains: ['attend meeting', 'plan meeting']
+  contains: ['start flow', 'plan meeting']
 }, (b) => { console.log(b); sendToRoom({"roomName":b.user.room.id,msg:'flow for starting response object',blocks:rmsg.block_date})}, {
   id: 'send-response'
 })

@@ -2,49 +2,38 @@
 [configure-bot]: https://rocket.chat/docs/bots/configure-bot-environment/
 
 ![bRocket | A bBot boilerplate for Rocket.Chat bots](https://github.com/Amazebot/bbot-rocketchat-boilerplate/raw/master/img/banner.png)
+## Bot to test blocks support in Rocket chat android client
+1. create a new bot with name bot and password pass
+2. Add the glitch url where bot is running ex: https://glitchurl.com/webhookurl in webHookUrl custom field of bot
 
-## Setup
+## Test the blocks
 
-## 1. 🍴  Fork or clone this repo
-  - `git clone amazebot/bbot-rocketchat-boilerplate MY_BOT`
-  - to clone without git history, add `--depth 1` flag
-  - or once cloned, start a fresh history `rm -rf .git && git init`
-## 2. 💻  Setup your project
-  - `npm install` get dependencies
-  - `npm run setup` add your details
-## 3. ✨  Test in shell
-  - `npm start -- -m shell`
-## 4. 👨‍💻  Start coding
-  - customise **index.js**
-  - look at **examples.js**
-## 5. 💬  Run in Rocket.Chat
-  - create user with bot role
-  - set login credentials in .env
-  - `npm start` (`rocketchat` is default adapter)
+1. Run `@bot start flow` to test the send response object and continous flow
+2. Run `@bot image element` to test the block image element
+3. Run `@bot overflow element` to test the block overflow element
+4. Run `@bot datepicker element` to test the block datepicker element
+5. Run `@bot button element` to test the block button element
 
-___
+Demo : [Demo](https://www.youtube.com/watch?v=Q8g1Wq2m8cc)
 
-You'll need a Rocket.Chat instance to test. See Rocket.Chat's docs on
-[Creating Bot Users][create-user] before you begin.
+# How to run the bot?
 
-Easy deployment options coming soon.
++ Logon to [rocket chat server](https://bots.rocket.chat) and create an account for the bot. (You will need admin rights)
++ Assign the role `bot` while creating the bot account above. 
++ Clone this repository.
++ Run `npm install`.
++ Create a `.env` file according to the template below, replacing the credentials with the account created:
+```
+BOT_FRAMEWORK=bbot
+ROCKETCHAT_URL=
+ROCKETCHAT_ROOM=general,richmessages
+ROCKETCHAT_USE_SSL=true
+ROCKETCHAT_USER=
+ROCKETCHAT_PASSWORD=
+RESPOND_TO_DM=true
+RESPOND_TO_EDITED=false
+```
++ Run `npm start` 
+  
 
-See [bbot.chat](http://bbot.chat) for get started guides.
 
-## Configure
-
-All **bBot** settings require the `BOT_` prefix on environment variables.
-
-See Rocket.Chat's docs on [Configuring Bot Environments][configure-bot] for 
-settings specific to the SDK.
-
-Configs can be given from command line. Try `node index.js -h` for options.
-
-They can also be set in **package.json** under the `"bot"` attribute. You should
-review all the package details and customise it to your own project details.
-
-## Development
-
-You can run and interact with the bot directly in shell, for quick development.
-
-Run `node index.js -m shell` to override Rocket.Chat as the message adapter.
